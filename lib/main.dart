@@ -9,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -80,16 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            /*MaterialPageRoute(
-              builder: (context) {
-                return const ProductMap();
-              },
-            ),*/
-            //page()
-            page(const ProductMap()),
-          );
+          Navigator.push(context, page(const ProductMap()));
         },
         //tooltip: 'Increment',
         child: const Icon(Icons.map),
