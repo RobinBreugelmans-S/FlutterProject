@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/map.dart';
 import 'package:flutter_application_1/product.dart';
 
 void main() {
@@ -46,7 +47,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //int _counter = 0;
   var products = [
     Product("Lawnmower", 2500),
     Product("Lawnmower 2", 3950),
@@ -78,11 +78,30 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[ProductList(products)],
         ),
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),*/
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            /*MaterialPageRoute(
+              builder: (context) {
+                return const ProductMap();
+              },
+            ),*/
+            //page()
+            page(const ProductMap()),
+          );
+        },
+        //tooltip: 'Increment',
+        child: const Icon(Icons.map),
+      ),
     );
   }
+}
+
+MaterialPageRoute page(Widget page) {
+  return MaterialPageRoute(
+    builder: (context) {
+      return page;
+    },
+  );
 }
