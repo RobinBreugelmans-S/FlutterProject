@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:latlong2/latlong.dart';
 
 class Product {
   String name;
   int price;
-  Product(this.name, this.price);
+  LatLng location;
+  Product(this.name, this.price, this.location);
 }
 
 class ProductContainer extends StatelessWidget {

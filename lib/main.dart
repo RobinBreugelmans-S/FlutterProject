@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/map.dart';
 import 'package:flutter_application_1/product.dart';
+import 'package:latlong2/latlong.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,16 +47,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //will be moved to FireBase
   var products = [
-    Product("Lawnmower", 2500),
-    Product("Lawnmower 2", 3950),
-    Product("Lawnmower 3", 3950),
-    Product("Lawnmower 4", 3950),
-    Product("Lawnmower 5", 3950),
-    Product("Lawnmower 6", 3950),
-    Product("Lawnmower 7", 3950),
-    Product("Lawnmower 8", 3950),
-    Product("Lawnmower 9", 3950),
+    Product("Lawnmower", 2500, LatLng(51.4, 4.5)),
+    Product("Lawnmower 2", 3950, LatLng(51.487377, -3.192222)),
+    Product("Lawnmower 3", 3950, LatLng(50.7543479, 6.0207718)),
+    Product("Lawnmower 4", 3950, LatLng(38, 70)),
+    Product("Lawnmower 5", 3950, LatLng(51.4484143, 4.8363272)),
+    Product("Lawnmower 6", 3950, LatLng(49.6, 6.1)),
+    Product("Lawnmower 7", 3950, LatLng(0, 0)),
+    Product("Lawnmower 8", 3950, LatLng(49.9349926, 6.2028354)),
+    Product("Lawnmower 9", 3950, LatLng(-83, 14)),
   ];
 
   /*void _incrementCounter() {
