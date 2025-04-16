@@ -76,7 +76,7 @@ class MarkerIcon extends StatelessWidget {
         showDialog(
           context: context,
           builder: (context) {
-            return const Icon(Icons.location_on, color: Colors.red, size: 120);
+            return ProductPopup(product);
           },
         );
       },
@@ -84,6 +84,48 @@ class MarkerIcon extends StatelessWidget {
       highlightColor: Colors.transparent,
       iconSize: 40,
       icon: const Icon(Icons.location_on, color: Colors.red),
+    );
+  }
+}
+
+class ProductPopup extends StatelessWidget {
+  final Product product;
+
+  const ProductPopup(this.product, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: 320,
+        //height: 16,
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 255, 255, 255),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.center, // center horizontally
+                child: Text(
+                  "Product Info",
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Text(product.name),
+              Text("Price: €${product.price}"),
+              //TODO: add button to buy
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
